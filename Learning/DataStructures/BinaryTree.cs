@@ -70,6 +70,38 @@ namespace Learning.DataStructures
             return node;
         }
 
+        /* returns true if given search tree is binary
+         * search tree (efficient version) */
+        public virtual bool IsBinarySearchTree
+        {
+            get
+            {
+                return ResolveIsBinarySearchTree(root, int.MinValue, int.MaxValue);
+            }
+        }
+
+        /* Returns true if the given tree is a BST and its
+         * values are >= min and <= max. */
+        public virtual bool ResolveIsBinarySearchTree(BinaryTreeNode node, int min, int max)
+        {
+            /* an empty tree is BST */
+            if (node == null)
+            {
+                return true;
+            }
+
+            /* false if this node violates the min/max constraints */
+            if (node.Key < min || node.Key > max)
+            {
+                return false;
+            }
+
+            /* otherwise check the subtrees recursively
+             * tightening the min/max constraints */
+            // Allow only distinct values  
+            return (ResolveIsBinarySearchTree(node.Left, min, node.Key - 1) && ResolveIsBinarySearchTree(node.Right, node.Key + 1, max));
+        }
+
         public BinaryTree()
         {
             root = null;
