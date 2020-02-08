@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Class1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Algorithms\" />
+    <Folder Include="DataStructures\" />
+    <Folder Include="Algorithms\Graphs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="LearningTests\obj\LearningTests.csproj.nuget.g.props" />
+    <None Remove="LearningTests\obj\LearningTests.csproj.nuget.cache" />
+    <None Remove="LearningTests\obj\LearningTests.csproj.nuget.g.targets" />
+    <None Remove="LearningTests\obj\LearningTests.csproj.nuget.dgspec.json" />
+    <None Remove="LearningTests\obj\project.assets.json" />
+    <None Remove="LearningTests\obj\Debug\netcoreapp3.1\LearningTests.csproj.FileListAbsolute.txt" />
+    <None Remove="LearningTests\obj\Debug\netcoreapp3.1\LearningTests.assets.cache" />
+    <None Remove="LearningTests\obj\Debug\netcoreapp3.1\LearningTests.csprojAssemblyReference.cache" />
+  </ItemGroup>
+</Project>
