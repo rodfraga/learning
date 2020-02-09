@@ -2,10 +2,10 @@
 {
     public class SumToZero
     {
-        public void FindSets(int n)
+        public static int[] FindSets(int n)
         {
             if (n == 0)
-                return;
+                return new int[0];
 
             int[] elements = new int[n];
 
@@ -30,7 +30,8 @@
                     elements[i] = i - ((size / 2) - 1);
                 }
             }
-            
+
+            return elements;
         }
     }
 }
