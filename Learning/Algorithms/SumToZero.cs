@@ -40,15 +40,12 @@ namespace Learning.Algorithms
         {
             var list = new List<int>();
             int arrayHalf = n / 2;
+
             for (int i = -arrayHalf; i <= arrayHalf; i++)
-            {
                 list.Add(i);
-            }
 
             if (n % 2 == 0)
-            {
                 list.Remove(0);
-            }
 
             return list.ToArray();
         }
