@@ -1,4 +1,6 @@
-﻿namespace Learning.Algorithms
+﻿using System.Collections.Generic;
+
+namespace Learning.Algorithms
 {
     public class SumToZero
     {
@@ -33,5 +35,23 @@
 
             return elements;
         }
+
+        public static int[] FindSetsUsingList(int n)
+        {
+            var list = new List<int>();
+            int arrayHalf = n / 2;
+            for (int i = -arrayHalf; i <= arrayHalf; i++)
+            {
+                list.Add(i);
+            }
+
+            if (n % 2 == 0)
+            {
+                list.Remove(0);
+            }
+
+            return list.ToArray();
+        }
+
     }
 }
