@@ -8,7 +8,7 @@ namespace Learning.Algorithms
             int[] values = new int[n + 1];
 
             values[0] = 0;
-            values[1] = 0;
+            values[1] = 1;
 
             for (int index = 2; index <= n; index++)
                 values[index] = values[index - 1] + values[index - 2];
