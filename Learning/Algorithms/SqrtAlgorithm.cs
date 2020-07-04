@@ -9,6 +9,8 @@ public class SqrtAlgorithm {
         
         while(t != r) {
             t = r;
+            // I tatooed the 0.5m instead of the 1 / 2 operation 
+            // cause has a tradeoff of 46ms at runtime. (believe it or not!)
             r = 0.5m * ((x / r) + r);
         }
         
