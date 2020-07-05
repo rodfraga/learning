@@ -3,28 +3,21 @@ namespace Learning.Algorithms
 {
     public class BinarySearch
     {
-        public static object Recursive(int[] inputArray, int key, int min, int max)
+        public static object Recursive(int[] nums, int key, int min, int max)
         {
             if (min > max)
-            {
-                return "Nil";
-            }
+                return null;
+            
+            int mid = (min + max) / 2;
+            
+            if (key == nums[mid])
+                return mid += 1;
+                
+            if (key < nums[mid])
+                return Recursive(nums, key, min, mid - 1);
             else
-            {
-                int mid = (min + max) / 2;
-                if (key == inputArray[mid])
-                {
-                    return ++mid;
-                }
-                else if (key < inputArray[mid])
-                {
-                    return Recursive(inputArray, key, min, mid - 1);
-                }
-                else
-                {
-                    return Recursive(inputArray, key, mid + 1, max);
-                }
-            }
+                return Recursive(nums, key, mid + 1, max);
+            
         }
     }
 }
