@@ -120,6 +120,45 @@ namespace Learning.DataStructures
             return Math.Min(MinDepth(root.Left), MinDepth(root.Right)) + 1; 
         }
 
+        public virtual bool IsBalanced(BinaryTreeNode node) 
+        { 
+            int lh;
+            int rh;
+
+            if (node == null) 
+                return true;
+
+            lh = Height(node.Left); 
+            rh = Height(node.Right); 
+
+            if (Math.Abs(lh - rh) <= 1 && IsBalanced(node.Left) && IsBalanced(node.Right))
+                return true;
+
+            return false; 
+        } 
+
+        public virtual int Height(BinaryTreeNode node) 
+        { 
+            if (node == null)
+                return 0;
+
+            return 1 + Math.Max(Height(node.Left), Height(node.Right)); 
+        } 
+
+        public BinaryTreeNode BalanceInOrder(BinaryTreeNode[] nodes, int start, int end) 
+        {
+            if(start > end)
+                return null;
+
+            int mid = (start + end) / 2;
+            BinaryTreeNode node = nodes[mid];
+
+            node.Left = BalanceInOrder(start, mid-1, nodes);
+            node.Right = BalanceInOrder(mid + 1, end, nodes);
+
+            return node;
+        }
+        
         public BinaryTree()
         {
             root = null;
