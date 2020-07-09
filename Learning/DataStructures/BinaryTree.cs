@@ -101,6 +101,24 @@ namespace Learning.DataStructures
             // Allow only distinct values  
             return (ResolveIsBinarySearchTree(node.Left, min, node.Key - 1) && ResolveIsBinarySearchTree(node.Right, node.Key + 1, max));
         }
+        
+        public int MinDepth(BinaryTreeNode root) {
+           if (root == null) 
+                return 0; 
+
+            if (root.Left == null && root.Right == null) 
+                return 1;
+
+            // If left subtree is NULL, recur for right subtree  
+            if (root.Left == null) 
+                return MinDepth(root.Right) + 1; 
+
+            // If right subtree is NULL, recur for left subtree  
+            if (root.Right == null) 
+                return MinDepth(root.Left) + 1;
+
+            return Math.Min(MinDepth(root.Left), MinDepth(root.Right)) + 1; 
+        }
 
         public BinaryTree()
         {
